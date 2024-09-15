@@ -15,7 +15,7 @@ function AnagramCheck(str1, str2) {
   let counterObject2 = {};
   // count and set the keys of each substrings in the strings provided
   for (let char of str1) {
-    // check if the key has a value and 1 to it
+    // check if the key has a value and increase it
     counterObject1[char] = (counterObject1[char] || 0) + 1;
   }
 
