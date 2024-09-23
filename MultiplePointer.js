@@ -16,7 +16,16 @@ function SumZero(arr) {
   }
 }
 
-// console.log(SumZero([-4, -3, -2, -1, 0, 1, 2, 4, 10]));
+function FindGreatestNumber(arr) {
+  let greatestNumber = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > greatestNumber) {
+      greatestNumber = arr[i];
+    }
+  }
+  return greatestNumber;
+}
+// console.log(FindGreatestNumber([10, 20, 40, 8,100,200,201, 6, 9, 10, 12, 17, 54]));
 
 // Counting Unique Values Algorithm
 function CountUniqueValues(arr) {
@@ -35,7 +44,7 @@ function CountUniqueValues(arr) {
   }
   return i + 1;
 }
-console.log(CountUniqueValues([1, 1, 2, 3, 3, 4, 5, 6, 9, 6, 7, 8, 8, 8]));
+// console.log(CountUniqueValues([1, 1, 2, 3, 3, 4, 5, 6, 9, 6, 7, 8, 8, 8]));
 //  i  j
 // [1, 1, 2, 3, 3, 4, 5, 6,9, 6, 7,8,8,8];
 //     2  j
