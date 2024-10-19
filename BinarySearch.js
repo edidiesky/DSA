@@ -69,7 +69,7 @@ let shortText3 = "renewable technologies";
 
 console.log(plagiarismCheck(longText3, shortText3));
 
-function findLongestNonRepeatingString(s) {
+function getLongestNonRepeatingString(s) {
   let stringObject = {};
   let MaxWordLength = 0;
   let start = 0;
@@ -82,40 +82,5 @@ function findLongestNonRepeatingString(s) {
   }
   return MaxWordLength;
 }
-console.log(getLongestNonRepeatingSubString("aefagahaijbccadefagabcdefghijk")); // Output: 8 ("hijbcdef")
+console.log(getLongestNonRepeatingString("aefagahaijbccadefagabcdefghijk")); // Output: 8 ("hijbcdef")
 
-
-// Step-by-Step Breakdown:
-// Let's walk through the sample input string "aefagahaijbccadefagabcdefghijk" to see how it works:
-
-// Initial Steps:
-
-// start = 0, end = 0, window is "a", length is 1 (end - start + 1 = 0 - 0 + 1).
-// MaxWordLength is updated to 1.
-// Next Iterations:
-
-// start = 0, end = 1, window is "ae", length is 2 (end - start + 1 = 1 - 0 + 1).
-
-// MaxWordLength is updated to 2.
-
-// start = 0, end = 2, window is "aef", length is 3 (end - start + 1 = 2 - 0 + 1).
-
-// MaxWordLength is updated to 3.
-
-// First Repeating Character:
-
-// At end = 3, the character is 'a', which repeats (it was last seen at index 0).
-// Move start to 1 (just after the first 'a').
-// The window becomes "efa" and its length is 3 (end - start + 1 = 3 - 1 + 1), but MaxWordLength remains 3 as it is not greater than the previous value.
-// Proceeding:
-
-// Continue this process for each character. When a repeat is found, the start pointer shifts, and MaxWordLength is updated if the current window is longer than the previous longest substring.
-// At the Substring "hijbcdef":
-
-// By the time the algorithm reaches "hijbcdef" (from index 7 to 14), there are no repeating characters.
-// The window length is 8 (end - start + 1 = 14 - 7 + 1 = 8).
-// MaxWordLength is updated to 8, as this is the longest substring without repeating characters.
-// Final Steps:
-
-// As the algorithm continues through the rest of the string, no non-repeating substring exceeds this length of 8.
-// Hence, MaxWordLength remains 8 and is returned as the final result.
