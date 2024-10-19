@@ -67,7 +67,7 @@ let longText3 =
   "Sustainable energy sources are essential for combating climate change. By investing in renewable technologies, we can reduce our carbon footprint and ensure a cleaner environment for future generations.";
 let shortText3 = "renewable technologies";
 
-console.log(plagiarismCheck(longText3, shortText3));
+// console.log(plagiarismCheck(longText3, shortText3));
 
 function getLongestNonRepeatingString(s) {
   let stringObject = {};
@@ -82,5 +82,25 @@ function getLongestNonRepeatingString(s) {
   }
   return MaxWordLength;
 }
-console.log(getLongestNonRepeatingString("aefagahaijbccadefagabcdefghijk")); // Output: 8 ("hijbcdef")
+// console.log(getLongestNonRepeatingString("aefagahaijbccadefagabcdefghijk")); // Output: 8 ("hijbcdef")
 
+function findMaxRepeatingCharacter(str) {
+  let maxCount = 0;
+  let charFrequency = {};
+  let maxchar = "";
+  for (let char of str) {
+    charFrequency[char] = (charFrequency[char] || 0) + 1; // Check if the character exists in the freq Object and increase it by 1
+
+    // check if the charFrequency value is greate than the maxXount
+    if(charFrequency[char] > maxCount) {
+      maxCount = charFrequency[char];
+      maxchar = char
+    }
+
+  }
+  return { maxchar , maxCount};
+}
+
+console.log(
+  findMaxRepeatingCharacter("aefagahaijbccadefagabcdefghijkaaaaaaaaaaaaaaaaa")
+); // Output: 8 ("hijbcdef")

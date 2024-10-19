@@ -87,24 +87,6 @@ function MaxSubArrayMuliplication(array, num) {
 // }
 // console.log(getLongestNonRepeatingSubString("aefagahijbcdefag"));
 function getLongestNonRepeatingSubString(s) {
-  // let charSet = new Set(); // Set to track unique characters
-  // let maxLength = 0; // To store the length of the longest substring
-  // let left = 0; // Left pointer for the sliding window
-
-  // // Iterate over the string with the right pointer
-  // for (let right = 0; right < string.length; right++) {
-  //   // If a duplicate character is found, shrink the window by moving 'left'
-  //   while (charSet.has(string[right])) {
-  //     charSet.delete(string[left]); // Remove the leftmost character
-  //     left++; // Move left pointer to the right
-  //   }
-  //   console.log(charSet);
-  //   // Add the current character to the set
-  //   charSet.add(string[right]);
-  //   console.log(charSet);
-  //   // Calculate the current window length and update maxLength
-  //   maxLength = Math.max(maxLength, right - left + 1);
-  // }
 
   // return maxLength; // Return the length of the longest substring
   let charIndex = {}; // Dictionary to store the last index of each character
