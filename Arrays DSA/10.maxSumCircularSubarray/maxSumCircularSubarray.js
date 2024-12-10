@@ -11,8 +11,9 @@ function maxSumCircularSubarray(nums) {
   }
   let minSum = kandane(nums.map((num) => -num));
   minSum = -minSum;
-
-  return Math.max(maxSum, totalSum - minSum);
+  if (totalSum === minSum) {
+    return totalSum;
+  } return Math.max(maxSum, totalSum - minSum);
 }
 function kandane(nums) {
   let currentSum = nums[0];
