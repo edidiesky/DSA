@@ -1,16 +1,22 @@
 function validAnagram(str1, str2) {
-    let charCount = new Map()
-    for (let char of str1) {
-        charCount.set(char,(charCount.get(char) || 0) +1)
-    }
+  if (str1.length !== str2.length) return false;
 
-    for (let char of str2) {
-        if(!charCount.has(char)) {
-            return false
-        }
-        charCount.set(char,(charCount.get(char)--)
-        
-    }
+  let charCount = new Map();
 
-    return true
+  // Build the frequency map for str1
+  for (let char of str1) {
+    charCount.set(char, (charCount.get(char) || 0) + 1);
+  }
+
+  // Check characters in str2 against the map
+  for (let char of str2) {
+    if (!charCount.has(char) || charCount.get(char) === 0) {
+      return false;
+    }
+    charCount.set(char, charCount.get(char) - 1);
+  }
+
+  return true;
 }
+
+console.log(validAnagram("anagram", "nagaram")); // true
