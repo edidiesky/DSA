@@ -13,7 +13,8 @@ function maxSumCircularSubarray(nums) {
   minSum = -minSum;
   if (totalSum === minSum) {
     return totalSum;
-  } return Math.max(maxSum, totalSum - minSum);
+  }
+  return Math.max(maxSum, totalSum - minSum);
 }
 function kandane(nums) {
   let currentSum = nums[0];

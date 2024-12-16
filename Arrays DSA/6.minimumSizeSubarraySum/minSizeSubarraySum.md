@@ -15,7 +15,8 @@ Output: 0
 **Algorithmic Steps:**
 This problem is solved with the help of **sliding window** approach without using any special data structure. The algorithmic approach can be summarized as follows:
 
-1. Initialize left and right pointers to 0, to keep track of the substring window boundaries.
+1. Initialize left and right pointers to 0, to keep track of the substring wi
+1. dow boundaries.
 
 2. Initialize total variable to 0, to store the sum of the subarray values to meet the target criteria.
 

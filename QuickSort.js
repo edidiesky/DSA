@@ -8,7 +8,7 @@ function SwapNumbers(arr, swapIdx, i) {
   arr[i] = tempPosition;
 }
 
-function getPivot(arr, start = 0, end) {
+function getPivot(arr, start = 0) {
   // first pivot
   let pivot = arr[start];
   // swap idx

@@ -2,7 +2,7 @@ function productExceptSelf(nums) {
   const answer = Array.from(nums).fill(1);
   let prefix = 1;
   for (let i = 0; i < nums.length; i++) {
-    answer[i] = prefix;
+    answer[i] *= prefix;
     prefix *= nums[i];
   }
   let postfix = 1;
