@@ -1,18 +1,18 @@
-function palindromicSubstrings(str) {
+function longestPalindromicSubstring(str) {
   let start = 0;
   let end = 0;
 
-  function expandAroundCenter(str, start, end) {
-    while (start >= 0 && end < str.length && str[start] === str[end]) {
-      start--;
-      end++;
+  function expandAroundCenter(str, left, right) {
+    while (left >= 0 && right < str.length && str[left] === str[right]) {
+      left--;
+      right++;
     }
-    return end - start - 1;
+    return right - left - 1;
   }
   for (let i = 0; i < str.length; i++) {
     let len1 = expandAroundCenter(str, i, i);
     let len2 = expandAroundCenter(str, i, i + 1);
-    let len = Math.floor((len1 + len2) / 2);
+    let len = Math.max(len1, len2);
 
     while (len > end - start) {
       start = i - Math.floor((len - 1) / 2);
@@ -25,4 +25,4 @@ function palindromicSubstrings(str) {
 
 let str = "ababd";
 
-console.log(palindromicSubstrings(str));
+console.log(longestPalindromicSubstring(str));
