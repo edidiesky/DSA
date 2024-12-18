@@ -244,11 +244,143 @@
 // let str = "hello DSA";
 // console.log(reverseWordsInString(str));
 
-function lastWordLength(str) {
-  str = str.replace(/[^a-z0-9A-Z]/g, "");
-  return str.split("").pop();
+// function lastWordLength(str) {
+//   str = str.trim();
+//   let word = str.split(" ");
+//   return word[word.length - 1].length;
+// }
+
+// let str = " My pet is fluffy  ";
+
+// console.log(lastWordLength(str));
+
+// for (let i = 0; i < 10; i++) {
+//   setTimeout(() => {
+//     console.log(i);
+//   }, 200);
+// }
+
+// VALID ANAGRAM
+// function ValidAnagram(str1, str2) {
+//   let charMap = new Map();
+//   for (const char of str1) {
+//     charMap.set(char, (charMap.get(char) || 0) + 1);
+//   }
+//   for (const char of str2) {
+//     if (!charMap.get(char) || charMap.get(char) === 0) {
+//       return false;
+//     }
+
+//     charMap.set(char, charMap.get(char) -1);
+//   }
+
+//   return true;
+// }
+
+// let str1 = "anagras";
+// let str2 = "nagaram";
+
+// console.log(ValidAnagram(str1, str2));
+
+// function BinarySearch(nums, target) {
+//   let start = 0;
+//   let end = nums.length - 1;
+
+//   while (start <= end) {
+//     let middle = Math.floor((start + end) / 2);
+//     if (nums[middle] === target) {
+//       return middle;
+//     }
+
+//     if (nums[start] <= nums[middle]) {
+//       if (nums[start] <= target && target <= nums[middle]) {
+//         end = middle - 1;
+//       } else {
+//         start = middle + 1;
+//       }
+//     } else {
+//       if (nums[middle] <= target && target <= nums[end]) {
+//         start = middle + 1;
+//       } else {
+//         end = middle - 1;
+//       }
+//     }
+//   }
+
+//   return -1;
+// }
+
+// function RotateAnArray(nums, n) {
+//   n %= nums.length;
+//   swapArray(nums, 0, nums.length - 1);
+//   swapArray(nums, 0, n - 1);
+//   swapArray(nums, n, nums.length - 1);
+
+//   return nums;
+// }
+
+// function swapArray(nums, start, end) {
+//   while (start < end) {
+//     [nums[start], nums[end]] = [nums[end], nums[start]];
+//     start++;
+//     end--;
+//   }
+// }
+
+// let nums = [-10, 4, 5, -1];
+
+// console.log(RotateAnArray(nums, 2));
+
+// function threeSum(nums, target) {
+//   nums = nums.sort((z, b) => z - b);
+//   let result = [];
+//   for (let i = 0; i <= nums.length - 2; i++) {
+//     let left = i + 1;
+//     let end = nums.length - 1;
+//     if (i >= 0 && nums[i] === nums[i - 1]) continue;
+
+//     while (left < end) {
+//       let sum = nums[i] + nums[end] + nums[left];
+//       if (sum === target) {
+//         result.push([nums[i], nums[end], nums[left]]);
+//         while (left < end && nums[left] === nums[left + 1]) left++;
+//         while (left < end && nums[end] === nums[end - 1]) end--;
+
+//         left++;
+//         end--;
+//       } else if (sum === target) {
+//         left++;
+//       } else {
+//         end--;
+//       }
+//     }
+//   }
+//   return result;
+// }
+// let nums = [-1, 0, 1, 2, -1, -4];
+// console.log(threeSum(nums, 0));
+
+function getLongestNonRepeatingSubString(nums) {
+  // let charCount = 0;
+  let charCount = new Set();
+  let start = 0;
+  let maxCount = 0;
+  for (let end = 0; end < nums.length; end++) {
+    const char = nums[end];
+
+    if (charCount.has(char)) {
+      charCount.delete(char);
+      start++;
+    }
+
+    charCount.add(char);
+    maxCount = Math.max(maxCount, charCount.size);
+  }
+
+  return maxCount;
 }
 
-let str = " My pet is fluffy  ";
+let s = "abcabcbbaa";
 
-console.log(lastWordLength(str));
+console.log(getLongestNonRepeatingSubString(s));
+
