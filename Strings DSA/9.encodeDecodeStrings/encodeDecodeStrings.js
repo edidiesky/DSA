@@ -1,4 +1,4 @@
-function encodeStrings(str) {
+function encodeString(str) {
   let encodedStrings = "";
   for (const char of str) {
     encodedStrings += char.length + "#" + char;
