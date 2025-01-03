@@ -2,8 +2,8 @@ function QuickSort(nums, left = 0, right = nums.length - 1) {
   if (left >= right) return nums;
   let pivotindex = getPivot(nums, left, right);
 
-  getPivot(nums, left, pivotindex - 1);
-  getPivot(nums, pivotindex + 1, right);
+  QuickSort(nums, left, pivotindex - 1);
+  QuickSort(nums, pivotindex + 1, right);
 
   return nums;
 }
