@@ -16,3 +16,5 @@ function minSizeSubarraySum(nums, target) {
 
 let nums = [2, 4, 1, 2, 4, 3];
 console.log(minSizeSubarraySum(nums, 7));
+
+

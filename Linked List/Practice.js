@@ -54,13 +54,34 @@ class LinkedlIst {
   }
   shift() {
     if (!this.head) return null;
-    const oldHead = this.head; // refers to the first node on the list
-    this.head = this.head.next; // head should also contain the next node
+    const oldHead = this.head;
+    this.head = this.head.next;
     this.length--;
     if (this.length === 0) {
-      this.tail = null; // set the tail to null
+      this.tail = null;
     }
-    return oldHead; // return oldhead
+    return oldHead;
+  }
+  unshift(value) {
+    const newNode = new Node(value);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = newNode;
+      this.head = newNode;
+    }
+
+    this.length++;
+    return this;
+  }
+  set(value, index) {
+    const foundNode = this.get(index);
+    if (foundNode) {
+      foundNode.data = value;
+      return true;
+    }
+    return false;
   }
 }
 
@@ -69,7 +90,4 @@ list.push(10);
 list.push(20);
 list.push(30);
 
-console.log(list.shift()); // Node { value: 10, next: Node }
-console.log(list.shift()); // Node { value: 20, next: Node }
-console.log(list.shift()); // Node { value: 30, next: null }
-console.log(list.shift()); // null (list is empty)
+console.log(list);

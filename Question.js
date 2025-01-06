@@ -140,11 +140,11 @@ function threeSum(nums, target) {
 function getMaxNumber(nums) {
   let currentSum = nums[0];
   let maxSum = nums[0];
-  for (let i = 0; i < nums.length; i++) {
+  for (let i = 1; i < nums.length; i++) {
     currentSum = Math.max(nums[i], nums[i] + currentSum);
     maxSum = Math.max(currentSum, maxSum);
   }
   return maxSum;
 }
 
-console.log(getMaxNumber([5,4,-1,7,8]));
+console.log(getMaxNumber([-2,1,-3,4,-1,2,1,-5,4]));
