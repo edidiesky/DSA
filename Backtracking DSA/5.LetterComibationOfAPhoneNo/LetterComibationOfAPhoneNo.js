@@ -10,7 +10,6 @@ function LetterComibationOfAPhoneNo(digits) {
     8: ["t", "u", "v"],
     9: ["w", "x", "y", "z"],
   };
-
   function backTrack(index, currentSubset) {
     if (index === digits.length) {
       result.push(currentSubset.join(""));
@@ -25,7 +24,6 @@ function LetterComibationOfAPhoneNo(digits) {
       currentSubset.pop();
     }
   }
-
   backTrack(0, []);
   return result;
 }

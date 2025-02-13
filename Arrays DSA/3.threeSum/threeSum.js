@@ -16,7 +16,7 @@ function threeSum(nums) {
       } else if (sums < 0) {
         start++;
       } else {
-        end++;
+        end--;
       }
     }
   }
