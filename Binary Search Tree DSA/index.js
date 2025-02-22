@@ -38,7 +38,7 @@ class BinarySearchTree {
   find(value) {
     if (!this.root) return undefined;
     let current = this.root;
-    while (current) {
+    while (                        current) {
       if (value < current.value) {
         current = current.left;
       } else if (value > current.value) {
@@ -49,8 +49,8 @@ class BinarySearchTree {
     }
     return undefined;
   }
-
-  BST() {
+  BFT() {
+    if (!this.root) return [];
     let queue = [],
       result = [],
       node = this.root;
@@ -62,31 +62,6 @@ class BinarySearchTree {
       if (node.right) queue.push(node.right);
     }
     return result;
-  }
-  insert(value) {
-    let node = new Node(value);
-    if (this.root) {
-      this.root = node;
-      return this;
-    } else {
-      let current = this.root;
-      if (value === current.value) return undefined;
-      if (value < current.value) {
-        if (!current.left) {
-          current.left = value;
-          return this;
-        }
-
-        current = current.left;
-      } else {
-        if (!current.right) {
-          current.right = value;
-          return this;
-        }
-
-        current = current.right;
-      }
-    }
   }
   DepthFirstPreOrder(root = this.root, data = []) {
     if (!root) return data;

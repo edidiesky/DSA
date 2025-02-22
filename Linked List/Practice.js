@@ -83,8 +83,37 @@ class LinkedlIst {
     }
     return false;
   }
+  remove(index) {
+    if (index < 0 || this.length > 0) return undefined;
+    if (index === 0) return this.shift();
+    if (index === this.length) return this.pop();
+
+    let prevNode = this.get(index - 1)
+    prevNode.next = prevNode.next.next
+    this.length--
+    return prevNode.next
+  }
+
+  reverse() {
+    let currentNode = this.head
+    this.head = this.tail
+    this.tail = currentNode
+
+    let prev = null
+    while(currentNode.next) {
+      let nextNode = currentNode.next
+      currentNode.next = prev
+      prev = currentNode
+      currentNode = nextNode
+    }
+
+    return this
+  }
 }
 
+//  10 > 20 > 40 > 60 > 
+// cN - nN
+// 80
 const list = new LinkedlIst();
 list.push(10);
 list.push(20);
