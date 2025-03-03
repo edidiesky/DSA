@@ -38,55 +38,50 @@ class BinarySearchTree {
   find(value) {
     if (!this.root) return undefined;
     let current = this.root;
-    while (                        current) {
-      if (value < current.value) {
+    while (current) {
+      if (current.val < value) {
         current = current.left;
-      } else if (value > current.value) {
+      } else if (current.val > value) {
         current = current.right;
       } else {
         return current;
       }
+      return undefined;
     }
-    return undefined;
   }
   BFT() {
     if (!this.root) return [];
-    let queue = [],
-      result = [],
-      node = this.root;
-    queue.push(node);
-    while (queue.length) {
-      node = queue.shift();
-      result.push(node);
-      if (node.left) queue.push(node.left);
-      if (node.right) queue.push(node.right);
+    let queue = [root],
+      result = [];
+    while (queue.length > 0) {
+      let node = queue.shift();
+      result.push(node.val);
+      if (node.left) result.push(node.left);
+      if (node.right) result.push(node.right);
     }
     return result;
   }
   DepthFirstPreOrder(root = this.root, data = []) {
     if (!root) return data;
     data.push(root);
-    this.DepthFirstPreOrder(root.left);
-    this.DepthFirstPreOrder(root.right);
+    this.DepthFirstInOrder(root.left, data);
+    this.DepthFirstInOrder(root.right, data);
     return data;
   }
 
   DepthFirstPostOrder(root = this.root, data = []) {
     if (!root) return data;
-
-    this.DepthFirstPreOrder(root.left);
-    this.DepthFirstPreOrder(root.right);
+    this.DepthFirstInOrder(root.left, data);
+    this.DepthFirstInOrder(root.right, data);
     data.push(root);
     return data;
   }
 
   DepthFirstInOrder(root = this.root, data = []) {
     if (!root) return data;
-
-    this.DepthFirstPreOrder(root.left);
+    this.DepthFirstInOrder(root.left, data);
     data.push(root);
-    this.DepthFirstPreOrder(root.right);
-
+    this.DepthFirstInOrder(root.right, data);
     return data;
   }
 }
@@ -94,5 +89,6 @@ class BinarySearchTree {
 //         8
 //    4          12
 // 3    5     10    20
+[8,4,12,3,5,10,20]
 
 let tree = new BinarySearchTree();
