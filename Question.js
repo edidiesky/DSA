@@ -1,3 +1,17 @@
+function Button() {
+  const [count, setCount] = useState(0);
+  const IncreaseCount = () => {
+    setCount(count + 1);
+    setCount(count + 1);
+    setCount(count + 1);
+    setCount(count + 1);
+  };
+
+  console.log("count", count)
+
+  return <button onClick={IncreaseCount}></button>;
+}
+
 // function QuickSort(nums, start = 0, end = nums.length - 1) {
 //   if (start >= end) {
 //     return nums;
