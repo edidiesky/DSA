@@ -1,0 +1,1 @@
+Write a throttle function that limits how often a function fn can be called. It should only allow fn to execute once every t milliseconds. If called again within that time, it ignores the call until the cooldown period ends.

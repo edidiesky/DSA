@@ -1,0 +1,1 @@
+Write a function "toJSON" that converts a JavaScript object (including nested objects, arrays, primitives) into a valid JSON string. Assume no circular references.

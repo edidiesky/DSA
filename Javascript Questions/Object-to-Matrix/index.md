@@ -1,0 +1,1 @@
+Write a function curry that transforms a function fn with multiple arguments into a sequence of single-argument functions. The curried function should collect arguments over multiple calls until it has enough to execute fn, then return the result.

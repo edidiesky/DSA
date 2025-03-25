@@ -283,10 +283,10 @@ function findMedianOf2SortedArray(nums1, nums2) {
 
     // checking out of bound elements
     // get maxleft, minRight for both nums1(X) and nums2 (X)
-    let maxLeftX = partitionX === 0 ? Infinity : nums1[partitionX - 1];
-    let minRightX = partitionX === x ? -Infinity : nums1[partitionX];
+    let maxLeftX = partitionX === 0 ? -Infinity : nums1[partitionX - 1];
+    let minRightX = partitionX === x ? Infinity : nums1[partitionX];
 
-    let maxLeftY = partitionY === 0 ? Infinity : nums2[partitionY - 1];
+    let maxLeftY = partitionY === 0 ? -Infinity : nums2[partitionY - 1];
     let minRightY = partitionY === y ? Infinity : nums2[partitionY];
 
     if (maxLeftX <= minRightY && maxLeftY <= minRightX) {
@@ -312,3 +312,7 @@ let nums1 = [1, 3];
 let nums2 = [2, 4];
 
 console.log(findMedianOf2SortedArray(nums1, nums2));
+function useState(arg0: number): [any, any] {
+  throw new Error("Function not implemented.");
+}
+
