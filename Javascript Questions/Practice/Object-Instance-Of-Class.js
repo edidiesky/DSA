@@ -1,0 +1,3 @@
+function InstanceOfClass(params:type) {
+    
+}
