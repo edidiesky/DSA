@@ -1,4 +1,5 @@
 function characterReplacement(str, k) {
+    
 }
 
 let s = "XYYX";
