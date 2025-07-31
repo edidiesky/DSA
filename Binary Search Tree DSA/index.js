@@ -11,6 +11,9 @@ class BinarySearchTree {
     this.root = null;
   }
 
+  /** 
+   * tHIS IS BAD? SINCE IT DOES NOT TRAVERSE DEEPLY.
+  */
   insert(value) {
     const node = new Node(value);
     if (!this.root) {
@@ -84,7 +87,33 @@ class BinarySearchTree {
     this.DepthFirstInOrder(root.right, data);
     return data;
   }
+  insert(value) {
+    // get the node
+    const node = new Node(value)
+    if(!this.root) {
+      this.root = node
+      return this
+    } else {
+      let curr = this.root
+      if(value === curr) return
+      if(value < curr.value) {
+        if(!curr.value) {
+          curr.left = node
+          return
+        }
+        curr = curr.left
+      } else {
+        if(!curr.value) {
+          curr.right = node
+          return
+        }
+        curr = curr.right
+      } 
+    }
+  }
 }
+
+APP("", ()=> {})
 
 //         8
 //    4          12

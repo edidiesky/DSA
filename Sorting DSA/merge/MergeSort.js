@@ -24,8 +24,7 @@ function Merge2Sort(arr1, arr2) {
     if (arr1[i] <= arr2[j]) {
       result.push(arr1[i]);
       i++;
-    }
-    if (arr1[i] > arr2[j]) {
+    }else {
       result.push(arr2[j]);
       j++;
     }
