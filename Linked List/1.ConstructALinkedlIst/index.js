@@ -58,10 +58,14 @@ class MyLinkedList {
       return;
     }
     // swap the head to be the new Node
-    const currentNode = this.getLinkedList(index - 1);
-    const newNode = new Node(value);
-    newNode.next = currentNode;
-    currentNode.next = newNode;
+    let prev = this.head;
+    for (let i = 0; i < index - 1; i++) {
+      prev = prev.next;
+    }
+    let newNode = new Node(value);
+    newNode.next = prev.next;
+    prev.next = newNode;
+    this.size++;
     return;
   }
 
@@ -83,7 +87,5 @@ class MyLinkedList {
     if (index === this.size - 1) this.tail = currentNode;
     return;
   }
-  rotateALinkedList(k) {
-
-  }
+  rotateALinkedList(k) {}
 }
