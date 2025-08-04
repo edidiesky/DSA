@@ -1,0 +1,5 @@
+class DoublyLinkedList {
+    constructor(parameters) {
+        
+    }
+}

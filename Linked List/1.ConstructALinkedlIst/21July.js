@@ -66,19 +66,23 @@ class MyLinkedList {
     this.size++;
   }
   delete(index) {
-      if (index < 0 || index >= this.size) return;
-      if(index === 0) {
-        this.head = this.head.next
-        this.size--
-        return
-      }
-      const prev = this.head
-      for(let i=0; i < index -1; i++) {
-        prev = prev.next
-      }
-      prev.next = prev.next.next
-      this.size--
-      if(index === this.size -1) this.tail = prev
-      return
+    if (index < 0 || index >= this.size) return;
+    if (index === 0) {
+      this.head = this.head.next;
+      this.size--;
+      return;
+    }
+    const prev = this.head;
+    for (let i = 0; i < index - 1; i++) {
+      prev = prev.next;
+    }
+    if (index === this.size - 1) {
+      curr.next = null;
+      this.tail = prev;
+    } else {
+      prev.next = prev.next.next;
+    }
+    this.size--;
+    return;
   }
 }
