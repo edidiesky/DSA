@@ -47,8 +47,6 @@ class MyLinkedList {
   }
   insert(value, index) {
     // check for edge cases in the index
-    // create the new node
-    //
     if (index < 0 || index >= this.size) return;
     if (index === 0) {
       this.addNodeAtStart(value);

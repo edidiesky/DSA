@@ -28,7 +28,7 @@ function binarySearch(array, num) {
 //     ],
 //     100
 //   )
-// );
+// ); 
 
 // "Edidiong is a boy" "did"
 
@@ -104,3 +104,12 @@ function findMaxRepeatingCharacter(str) {
 console.log(
   findMaxRepeatingCharacter("aefagahaijbccadefagabcdefghijkaaaaaaaaaaaaaaaaa")
 ); // Output: 8 ("hijbcdef")
+
+/**
+ * create a unique set
+ * loop through it
+ * check if !set.has(num)
+ * create  acounter, num
+ * while set.has(num + 1) => curr = num, count++
+ * return max count
+ */

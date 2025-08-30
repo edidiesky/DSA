@@ -20,4 +20,6 @@ function palindromicSubstrings(str) {
 
 let str = "abcd";
 
-console.log(palindromicSubstrings(str));
+console.log(palindromicSubstrings(str)); 
+
+
