@@ -17,8 +17,11 @@ class DoubleLinkedlIst {
             this.head = newNode
             this.tail = newNode
         } else {
-            
+            newNode.next = this.head
+            this.head.prev = newNode
+            this.head = newNode
         }
+        this.size++
     }
     addAtTail(val){}
     insertNode(val){}

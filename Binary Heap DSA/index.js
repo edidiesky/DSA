@@ -9,8 +9,8 @@ class BinaryHeap {
   bubbleUp() {
     let idx = this.value.length - 1;
     let element = this.value[idx];
-    while (true) {
-      let parentIdx = idx - 1 / 2;
+    while (idx > 0) {
+      let parentIdx = Math.floor(idx - 1 / 2);
       let parent = this.value[parentIdx];
       if (element <= parent) break;
       [parent, element] = [element, parent];
